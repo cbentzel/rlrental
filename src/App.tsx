@@ -1,13 +1,13 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
 import Grid from './components/Grid';
 
-function App() {
+const App: React.FC = () => {
   // Create a sample 20x20 grid with random integers
-  const generateInitialGrid = () => {
-    const grid = [];
+  const generateInitialGrid = (): number[][] => {
+    const grid: number[][] = [];
     for (let i = 0; i < 20; i++) {
-      const row = [];
+      const row: number[] = [];
       for (let j = 0; j < 20; j++) {
         row.push(Math.floor(Math.random() * 100)); // Random integers between 0-99
       }
@@ -26,4 +26,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;
