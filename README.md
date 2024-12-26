@@ -1,6 +1,6 @@
-# Grid Visualizer
+# Jack's Car Rental
 
-A React-based visualization tool for displaying and interacting with a 20x20 grid of integers. Each cell's color intensity represents its numerical value, creating a visual heat map of the data.
+A React-based visualization tool for the "Jack's Car Rental" problem in CHapter 4 of Barto + Sutton Reinforcement Learning.
 
 ## Features
 
