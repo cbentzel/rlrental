@@ -1,7 +1,10 @@
 import React from 'react';
-import './Grid.css';
 
-const Grid = ({ grid }) => {
+interface GridProps {
+  grid: number[][];
+}
+
+const Grid: React.FC<GridProps> = ({ grid }) => {
   return (
     <div className="grid-container">
       {grid.map((row, rowIndex) => (
@@ -24,4 +27,4 @@ const Grid = ({ grid }) => {
   );
 };
 
-export default Grid; 
+export default Grid;
