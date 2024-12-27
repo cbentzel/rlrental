@@ -15,6 +15,44 @@ const Grid: React.FC<GridProps> = ({ grid }) => {
     'rgba(0, 123, 255, 1.0)'  // Height 5
   ];
 
+  const getBorderStyle = (rowIndex: number, cellIndex: number): React.CSSProperties => {
+    const cellValue = grid[rowIndex][cellIndex];
+    const borderStyle: React.CSSProperties = {
+      borderColor: heightColors[cellValue]
+    };
+
+
+    // Check top cell
+    if (rowIndex > 0 && grid[rowIndex - 1][cellIndex] !== cellValue) {
+      borderStyle.borderTop = '1px solid black';
+    } else if (rowIndex === 0) {
+      borderStyle.borderTop = '2px solid black';
+    }
+
+    // Check bottom cell
+    if (rowIndex < grid.length - 1 && grid[rowIndex + 1][cellIndex] !== cellValue) {
+      borderStyle.borderBottom = '1px solid black';
+    } else if (rowIndex === grid.length - 1) {
+      borderStyle.borderBottom = '2px solid black';
+    }
+
+    // Check left cell
+    if (cellIndex > 0 && grid[rowIndex][cellIndex - 1] !== cellValue) {
+      borderStyle.borderLeft = '1px solid black';
+    } else if (cellIndex === 0) {
+      borderStyle.borderLeft = '2px solid black';
+    }
+
+    // Check right cell
+    if (cellIndex < grid[rowIndex].length - 1 && grid[rowIndex][cellIndex + 1] !== cellValue) {
+      borderStyle.borderRight = '1px solid black';
+    } else if (cellIndex === grid[rowIndex].length - 1) {
+      borderStyle.borderRight = '2px solid black';
+    }
+
+    return borderStyle;
+  };
+
   return (
     <div className="grid-container">
       {grid.map((row, rowIndex) => (
@@ -24,7 +62,8 @@ const Grid: React.FC<GridProps> = ({ grid }) => {
               key={`${rowIndex}-${cellIndex}`}
               className="grid-cell"
               style={{
-                backgroundColor: heightColors[cell]
+                backgroundColor: heightColors[cell],
+                ...getBorderStyle(rowIndex, cellIndex)
               }}
             >
               {cell}
