@@ -11,35 +11,6 @@ A React-based visualization tool for the "Jack's Car Rental" problem in CHapter 
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/grid-visualizer.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd grid-visualizer
-   ```
-
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-4. Start the development server:
-   ```bash
-   npm start
-   ```
-
-The application will open in your default browser at `http://localhost:3000`.
-
 ## Usage
 
 The grid automatically generates random integers between 0-99 for demonstration purposes. To use your own data, modify the `generateInitialGrid` function in `src/App.js`.
